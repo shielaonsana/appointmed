@@ -1,0 +1,263 @@
+[12-May-2025 17:06:33 Europe/Berlin] Database error: Unknown column 'first_name' in 'field list'
+[12-May-2025 17:06:40 Europe/Berlin] Database error: Unknown column 'first_name' in 'field list'
+[12-May-2025 17:16:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_username'@'localhost' (using password: YES) in C:\xampp\htdocs\healthcare-appointment-system\config\database.php:8
+Stack trace:
+#0 C:\xampp\htdocs\healthcare-appointment-system\config\database.php(8): mysqli->__construct('localhost', 'your_username', Object(SensitiveParameterValue), 'your_database')
+#1 C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php(26): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\config\database.php on line 8
+[12-May-2025 17:16:51 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'your_username'@'localhost' (using password: YES) in C:\xampp\htdocs\healthcare-appointment-system\config\database.php:8
+Stack trace:
+#0 C:\xampp\htdocs\healthcare-appointment-system\config\database.php(8): mysqli->__construct('localhost', 'your_username', Object(SensitiveParameterValue), 'your_database')
+#1 C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php(26): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\config\database.php on line 8
+[12-May-2025 17:17:28 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\healthcare-appointment-system\config\database.php:8
+Stack trace:
+#0 C:\xampp\htdocs\healthcare-appointment-system\config\database.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'appointment_sys...')
+#1 C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php(26): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\config\database.php on line 8
+[12-May-2025 17:17:29 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\healthcare-appointment-system\config\database.php:8
+Stack trace:
+#0 C:\xampp\htdocs\healthcare-appointment-system\config\database.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'appointment_sys...')
+#1 C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php(26): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\config\database.php on line 8
+[12-May-2025 17:17:30 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\healthcare-appointment-system\config\database.php:8
+Stack trace:
+#0 C:\xampp\htdocs\healthcare-appointment-system\config\database.php(8): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'appointment_sys...')
+#1 C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php(26): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\config\database.php on line 8
+[12-May-2025 17:19:20 Europe/Berlin] Database Error: Unknown column 'first_name' in 'field list'
+[12-May-2025 17:19:20 Europe/Berlin] Database Error: Unknown column 'first_name' in 'field list'
+[12-May-2025 17:19:35 Europe/Berlin] Database Error: Unknown column 'first_name' in 'field list'
+[12-May-2025 17:19:35 Europe/Berlin] Database Error: Unknown column 'first_name' in 'field list'
+[12-May-2025 17:53:15 Europe/Berlin] Database Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '// Changed from first_name/last_name to full_name
+                           ...' at line 2
+[12-May-2025 17:53:15 Europe/Berlin] Database Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '// Changed from first_name/last_name to full_name
+                           ...' at line 2
+[12-May-2025 17:54:00 Europe/Berlin] Database Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '// Changed from first_name/last_name to full_name
+                           ...' at line 2
+[12-May-2025 17:54:00 Europe/Berlin] Database Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '// Changed from first_name/last_name to full_name
+                           ...' at line 2
+[12-May-2025 18:00:43 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:00:43 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:00:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:00:52 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:00:52 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:00:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:01:13 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:01:13 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:01:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:01:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:01:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:01:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:01:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 50
+[12-May-2025 18:01:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 51
+[12-May-2025 18:01:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:116
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 116
+[12-May-2025 18:28:52 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:28:52 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:28:53 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:28:53 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:35 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:35 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:36 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:36 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:36 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:36 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:37 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:38 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:38 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:38 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:38 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:43 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:43 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:44 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:45 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:45 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:45 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:45 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:45 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:45 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:46 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:46 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:46 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:46 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:55 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:55 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:58 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:30:58 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:32:00 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:32:00 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:32:00 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 64
+[12-May-2025 18:32:00 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 65
+[12-May-2025 18:32:00 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:130
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 130
+[12-May-2025 18:32:07 Europe/Berlin] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:32:07 Europe/Berlin] PHP Warning:  Attempt to read property "connect_error" on null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 20
+[12-May-2025 18:32:07 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 64
+[12-May-2025 18:32:07 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 65
+[12-May-2025 18:32:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #5 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:130
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 130
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:48:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 820
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Undefined variable $doctorProfile in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 18:53:53 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 860
+[12-May-2025 19:49:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:50:24 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:50:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:50:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:51:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:51:59 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:52:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:53:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 19:58:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 20:03:57 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #4 cannot be passed by reference in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php:133
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\healthcare-appointment-system\dashboard\doctor\profile.php on line 133
+[12-May-2025 20:17:32 Europe/Berlin] Form submission received:
+[12-May-2025 20:17:32 Europe/Berlin] Array
+(
+)
+
+[12-May-2025 20:17:32 Europe/Berlin] Array
+(
+)
+
+[12-May-2025 20:19:16 Europe/Berlin] Form submission received:
+[12-May-2025 20:19:16 Europe/Berlin] Array
+(
+    [first_name] => Jovan
+    [last_name] => Nadala
+    [email] => jovan.nadala@gmail.com
+    [phone] => 09474775686
+    [date_of_birth] => 2004-01-18
+    [gender] => male
+    [address] => hi
+    [city] => malayo city
+    [state] => estate
+    [zip_code] => 564
+    [specialization] => neurology
+    [sub_specialties] => Interventional Cardiology, Electrophysiology, Electrician
+    [years_of_experience] => 5
+    [medical_license_number] => MED - 911
+    [npi_number] => 12345
+    [education_and_training] => marami na akong training
+)
+
+[12-May-2025 20:19:16 Europe/Berlin] Array
+(
+    [profile_image] => Array
+        (
+            [name] => doctor-nurses-special-equipment.jpg
+            [full_path] => doctor-nurses-special-equipment.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpA6E4.tmp
+            [error] => 0
+            [size] => 2387534
+        )
+
+)
+
+[12-May-2025 20:19:16 Europe/Berlin] Form submission received:
+[12-May-2025 20:19:16 Europe/Berlin] Array
+(
+)
+
+[12-May-2025 20:19:16 Europe/Berlin] Array
+(
+)
+
