@@ -515,8 +515,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="nav-container" id="nav-container">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="doctors.php">Doctors</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contacts.html">Contact</a></li>
@@ -705,8 +705,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="doctors.php">Doctors</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contacts.html">Contacts</a></li>
                 </ul>

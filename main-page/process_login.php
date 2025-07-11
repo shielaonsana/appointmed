@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     header("Location: ../dashboard/doctor/index.php");
                     break;
                 case 'Admin':
-                    header("Location: ../dashboard/admin/index.html");
+                    header("Location: ../dashboard/admin/index.php");
                     break;
                 default:
                     header("Location: ../main-page/login.php?error=invalid_role");

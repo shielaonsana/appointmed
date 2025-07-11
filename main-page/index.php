@@ -363,7 +363,7 @@ function getDoctorImagePath($profileImage) {
         </div>
     </section>
 
-    <form class="scheduler" method="GET" action="doctors.html">
+    <form class="scheduler" method="GET" action="doctors.php">
         <h3>Quick Appointment Scheduler</h3>
         <div class="form-row">
             <select name="specialty" required>
@@ -604,8 +604,8 @@ function getDoctorImagePath($profileImage) {
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="doctors.php">Doctors</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="contacts.html">Contacts</a></li>
                 </ul>

@@ -228,8 +228,8 @@ $_SESSION['email'] = $user['email'];
             </div>
             <div class="nav-container" id="nav-container">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="doctors.php">Doctors</a></li>
                     <li><a href="profile.php" class="active">Profile</a></li>
                 </ul>
                 <div class="auth-buttons">
@@ -318,7 +318,7 @@ $_SESSION['email'] = $user['email'];
                         We're working on the appointments system. Soon you'll be able to book and manage
                         your medical appointments directly from here.
                     </p>
-                    <a href="doctors.html" style="display: inline-block; margin-top: 20px; 
+                    <a href="doctors.php" style="display: inline-block; margin-top: 20px; 
                        padding: 10px 20px; background-color: #3498db; color: white; 
                        border-radius: 5px; text-decoration: none;">Browse Doctors</a>
                 </div>
@@ -344,8 +344,8 @@ $_SESSION['email'] = $user['email'];
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="doctors.php">Doctors</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
                 </ul>
