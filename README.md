@@ -1,6 +1,6 @@
-# Appointmed - Healthcare Appointment System
+# AppointMed - Healthcare Appointment System
 
-Appointmed is a simple PHP-MySQL web application that allows patients to book appointments and administrators to manage appointments and schedules. This system is ideal for small clinics or healthcare providers who want a basic and easy-to-use appointment management tool.
+AppointMed is a simple PHP-MySQL web application that allows patients to book appointments and administrators to manage appointments and schedules. This system is ideal for small clinics or healthcare providers who want a basic and easy-to-use appointment management tool.
 
 ---
 
@@ -137,6 +137,16 @@ Use this default account to log in as admin:
 
 * **Email Address:** `admin@gmail.com`
 * **Password:** `Admin12345`
+
+---
+
+## 🌐 Live Preview (Static Version)
+
+If you want to **preview how the project looks** without installing XAMPP or importing the database, you can visit the **static version** hosted via GitHub Pages:
+
+🔗 [Static Demo - AppointMed UI Only](https://shielaonsana.github.io/appointmed_static/)
+
+> ⚠️ Note: This static version does **not** have any backend functionality — it only shows the layout and design of the system.
 
 ---
 
