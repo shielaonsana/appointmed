@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2025 at 04:09 PM
+-- Generation Time: Jul 11, 2025 at 04:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,7 +47,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `user_id`, `first_name`, `last_name`, `date_of_birth`, `gender`, `email`, `phone_number`, `address`, `city`, `state`, `zip_code`) VALUES
-(1, 24, 'Shiela Mae', 'Onsana', '2003-12-04', 'Female', 'rc.shielamae.onsana@cvsu.edu.ph', '09611485329', '156 Purok 4', 'Tanza', 'Cavite', '4108'),
+(1, 24, 'Admin', '', '2003-12-04', 'Female', 'admin@gmail.com', '01234567890', 'Anyadress', 'Anycity', 'Anystate', ''),
 (6, 29, 'Harold ', 'Dizon', '2004-12-25', 'Male', 'rc.harold.dizon@cvsu.edu.ph', '09000000000', '', '', '', '');
 
 -- --------------------------------------------------------
@@ -344,8 +344,7 @@ INSERT INTO `users` (`user_id`, `full_name`, `email`, `phone_number`, `date_of_b
 (20, 'Jovan Nadala', 'jovan.nadala@gmail.com', '09474775686', '2004-02-17', 'Male', 'Anywhere St. Hello!', 'Anycity', 'Anystate', '1234', '$2y$10$JMYyDZFLHDJBh9LumoFxkuespxbmA7kYES/j5cMkyyHYM4OZnSPva', 'Patient', '2025-05-21 00:43:20', '2025-05-22 17:26:05', 0, 1, 'profile_682f50018a0ba.jpg'),
 (21, 'Jema Legaspi', 'jema.legaspi@mail.com', '09121234567', '2004-04-08', 'Female', 'Anywhere St.', 'Anycity', 'Anystate', '4322', '$2y$10$fZQdQhedwmUICX5f0pT5AOPhCZ.VedqCCbw.dqmrGy2Nb66YJXNaS', 'Patient', '2025-05-22 16:51:53', '2025-05-22 16:54:53', 0, 1, '682f5628f0ecf.png'),
 (22, 'Sebastian Tagalog', 'sebastian.tagalog@mail.com', '09455787845', '2004-12-05', 'Male', 'Anywhere St. ', 'Anycity', 'Anystate', '3456', '$2y$10$N9jZqb4T0shX/BGQ1edMLeu1RhCEm2MEXtXu2K7VKP29u8Bh4Vd8C', 'Patient', '2025-05-22 16:53:02', '2025-05-22 16:55:51', 0, 1, '682f566ee1774.png'),
-(24, 'Shiela Mae Onsana', 'rc.shielamae.onsana@cvsu.edu.ph', '09611485329', '2003-12-04', 'Female', '156 Purok 4', 'Tanza', 'Cavite', '4108', '$2y$10$RSp7p2kmMk1Pq6RBOEmudOLUroUKyEZEGkwDFe7xH7lIc6CjJOU0G', 'Admin', '2025-05-24 04:11:16', '2025-06-02 23:18:07', 0, 1, '../../images/admins/default.png'),
-(29, 'Harold  Dizon', 'rc.harold.dizon@cvsu.edu.ph', '09000000000', '2004-12-25', 'Male', '', '', '', '', '$2y$10$F3Oo/yeLzGQCYScfCMpjLOTXJ0tpCtNSNvPqdzZ3x6a5tkgC7w7jW', 'Admin', '2025-05-24 11:55:16', '2025-05-24 11:55:31', 0, 1, 'default.png');
+(24, 'Admin ', 'admin@gmail.com', '01234567890', '2003-12-04', 'Female', 'Anyadress', 'Anycity', 'Anystate', '', '$2y$10$RSp7p2kmMk1Pq6RBOEmudOLUroUKyEZEGkwDFe7xH7lIc6CjJOU0G', 'Admin', '2025-05-24 04:11:16', '2025-07-11 14:16:57', 0, 1, '../../images/admins/default.png');
 
 --
 -- Indexes for dumped tables
@@ -484,7 +483,7 @@ ALTER TABLE `patient_medical_info`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- Constraints for dumped tables
