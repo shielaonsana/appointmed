@@ -193,6 +193,7 @@ function getDoctorImagePath($profileImage) {
             flex: 1;
             display: flex;
             flex-direction: column;
+            text-align: left;
         }
 
         .doctor-info h3 {
@@ -211,7 +212,7 @@ function getDoctorImagePath($profileImage) {
         .rating {
             color: #f1c40f;
             font-size: 1rem;
-            margin: 0 0 10px 0;
+            margin: 0 0 2px 0;
         }
 
         .rating span {
@@ -225,6 +226,7 @@ function getDoctorImagePath($profileImage) {
             font-size: 0.95rem;
             line-height: 1.5;
             flex-grow: 1;
+            text-align: left;
         }
 
         .availability i {

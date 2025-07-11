@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require_once '../../config/database.php';
@@ -8,6 +9,49 @@ if (!isset($_SESSION['user_id']) || $_SESSION['account_type'] !== 'Admin') {
     header("Location: ../../main-page/login.php");
     exit();
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user_id'])) {
+    $deleteId = intval($_POST['delete_user_id']);
+    
+    // Delete from users table (you can also delete related data if needed)
+    $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
+    $stmt->bind_param("i", $deleteId);
+
+    if ($stmt->execute()) {
+        echo "success";
+    } else {
+        echo "error: " . $stmt->error;
+    }
+    exit;
+}
+
+$patientsQuery = "
+    SELECT 
+        user_id,
+        full_name,
+        gender,
+        date_of_birth,
+        email,
+        phone_number,
+        address,
+        city,
+        state,
+        zip_code,
+        profile_image,
+        created_at,
+        is_active
+    FROM users
+    WHERE account_type = 'Patient'
+    ORDER BY full_name ASC
+";
+$patientsResult = $conn->query($patientsQuery);
+
+if (!$patientsResult) {
+    die("Patients query failed: " . $conn->error);
+}
+
+
+//
 
 // Fetch patient's complete profile data
 $user_id = $_SESSION['user_id'];
@@ -491,9 +535,14 @@ $admin_id = $adminProfile['admin_id'];
             display: inline-block;
         }
 
-        .confirmed {
+        .completed {
             background-color: #e6f7e9;
             color: #3dbb65;
+        }
+      
+        .confirmed {
+            background-color: #fff2e0;
+            color: #f59e0b;
         }
 
         .cancelled {
@@ -522,6 +571,85 @@ $admin_id = $adminProfile['admin_id'];
             background-color: #f0f5ff;
             color: #3498db;
         }
+        .status.active {
+            background-color: #e6f7e9;
+            color: #3dbb65;
+        }
+        .status.inactive {
+            background-color: #fee2e2;
+            color: #ef4444;
+        }
+
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .styled-modal {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 30px 25px;
+            border-radius: 16px;
+            width: 95%;
+            max-width: 550px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .modal-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .modal-profile {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-profile img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #f0f5ff;
+            background-color: #f9fafb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .modal-info p {
+            margin: 10px 0;
+            font-size: 15px;
+            color: #374151;
+        }
+
+        .modal-info p strong {
+            color: #6b7280;
+            min-width: 130px;
+            display: inline-block;
+        }
+
+        .close-view-btn{
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #9ca3af !important ; 
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-view-btn:hover{
+           color: #ef4444 !important;
+        }
 
         .pagination {
             display: flex;
@@ -540,6 +668,89 @@ $admin_id = $adminProfile['admin_id'];
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        /* Style the modal form inputs to match your design */
+        #editPatientModal input[type="text"],
+        #editPatientModal input[type="email"],
+        #editPatientModal input[type="date"],
+        #editPatientModal select {
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 16px;
+            border: 1px solid #e0e7f1;
+            border-radius: 10px;
+            background-color: #f8fafc;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            color: #1f2937;
+            transition: all 0.3s ease;
+        }
+
+        #editPatientModal input:focus,
+        #editPatientModal select:focus {
+            outline: none;
+            background-color: #fff;
+            border-color: #bfdbfe;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Label styling */
+        #editPatientModal label {
+            display: block;
+            font-size: 14px;
+            color: #374151;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        /* Form styling */
+        #editPatientModal form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Submit button if present (you can customize this if it has a class/id) */
+        #editPatientModal form button[type="submit"],
+        #editPatientModal form input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        #editPatientModal form button[type="submit"]:hover,
+        #editPatientModal form input[type="submit"]:hover {
+            background-color: #277cc1;
+        }
+
+        /* Adjust spacing and layout */
+        #editPatientModal .modal-content.styled-modal {
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Adjust close button in top-right */
+        #editPatientModal .close-edit-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #editPatientModal .close-edit-btn:hover {
+            color: #ef4444;
         }
 
         .page-btn {
@@ -569,6 +780,8 @@ $admin_id = $adminProfile['admin_id'];
         .next-btn {
             color: #64748b;
         }
+
+        
 
         /* Responsive styles */
         @media (max-width: 768px) {
@@ -604,9 +817,10 @@ $admin_id = $adminProfile['admin_id'];
                 justify-content: space-between;
             }
         }
+
     </style>
 </head>
-
+        
 
 <body>
     <div class="container">
@@ -695,314 +909,156 @@ $admin_id = $adminProfile['admin_id'];
                                 <th>Patient</th>
                                 <th>Age</th>
                                 <th>Gender</th>
-                                <th>Last Visit</th>
-                                <th>Next Appointment</th>
-                                <th>Primary Diagnosis</th>
+                                <th>Registration Date</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Patient 1 --> 
-                            <tr>
-                                <td>
-                                    <div class="patient-info">
-                                        <div class="patient-avatar">
-                                            <img src="images/logo.png" alt="">
-                                        </div>
-                                        <div class="patient-details">
-                                            <span class="patient-name">James Anderson</span>
-                                            <span class="patient-id">ID: P-10234</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-age">
-                                        <div class="patient-detail">
-                                            <span class="age">39 years old</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-gender">
-                                        <span class="gender">Male</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="last-visit">
-                                        <span class="date">2024-03-10</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="next-appointment">
-                                        <span class="date">May 7, 2025</span>
-                                        <span class="time">10:30 AM</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="primay-diagnosis">
-                                        <span class="diagnosis">Hypertension</span>
-                                    </div>
-                                </td>
-                                <td><span class="status confirmed">Active</span></td>
-                                <td>
-                                    <div class="action-icons">
-                                        <div class="action-icon">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-pen"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-trash"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                           <?php while ($row = $patientsResult->fetch_assoc()): ?>
+                            <?php
+                                $dob = $row['date_of_birth'];
+                                $age = ($dob && $dob !== '0000-00-00') 
+                                    ? floor((time() - strtotime($dob)) / (365*24*60*60)) . " years old" 
+                                    : "Unknown";
 
-                            <!-- Patient 2 --> 
-                            <tr>
-                                <td>
-                                    <div class="patient-info">
-                                        <div class="patient-avatar">
-                                            <img src="images/logo.png" alt="">
-                                        </div>
-                                        <div class="patient-details">
-                                            <span class="patient-name">James Anderson</span>
-                                            <span class="patient-id">ID: P-10234</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-age">
-                                        <div class="patient-detail">
-                                            <span class="age">39 years old</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-gender">
-                                        <span class="gender">Male</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="last-visit">
-                                        <span class="date">2024-03-10</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="next-appointment">
-                                        <span class="date">May 7, 2025</span>
-                                        <span class="time">10:30 AM</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="primay-diagnosis">
-                                        <span class="diagnosis">Hypertension</span>
-                                    </div>
-                                </td>
-                                <td><span class="status cancelled">Inactive</span></td>
-                                <td>
-                                    <div class="action-icons">
-                                        <div class="action-icon">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-pen"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-trash"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                $profileImg = !empty($row['profile_image']) ? '../../images/patients/' . $row['profile_image'] : '../../images/patients/default.png';
+                                if (!file_exists($profileImg)) {
+                                    $profileImg = '../../images/patients/default.png';
+                                }
 
-                            <!-- Patient 3 --> 
-                            <tr>
-                                <td>
-                                    <div class="patient-info">
-                                        <div class="patient-avatar">
-                                            <img src="images/logo.png" alt="">
-                                        </div>
-                                        <div class="patient-details">
-                                            <span class="patient-name">James Anderson</span>
-                                            <span class="patient-id">ID: P-10234</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-age">
-                                        <div class="patient-detail">
-                                            <span class="age">39 years old</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-gender">
-                                        <span class="gender">Male</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="last-visit">
-                                        <span class="date">2024-03-10</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="next-appointment">
-                                        <span class="date">May 7, 2025</span>
-                                        <span class="time">10:30 AM</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="primay-diagnosis">
-                                        <span class="diagnosis">Hypertension</span>
-                                    </div>
-                                </td>
-                                <td><span class="status cancelled">Inactive</span></td>
-                                <td>
-                                    <div class="action-icons">
-                                        <div class="action-icon">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-pen"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-trash"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                $statusClass = $row['is_active'] ? 'active' : 'inactive';
+                                $statusText = $row['is_active'] ? 'Active' : 'Inactive';
 
-                            <!-- Patient 4 --> 
+                                $createdAt = date('F j, Y', strtotime($row['created_at']));
+                                $fullName = htmlspecialchars($row['full_name']);
+                            ?>
                             <tr>
                                 <td>
                                     <div class="patient-info">
                                         <div class="patient-avatar">
-                                            <img src="images/logo.png" alt="">
+                                            <img src="<?= $profileImg ?>" alt="">
                                         </div>
                                         <div class="patient-details">
-                                            <span class="patient-name">James Anderson</span>
-                                            <span class="patient-id">ID: P-10234</span>
+                                            <span class="patient-name"><?= $fullName ?></span>
+                                            <span class="patient-id">ID: U-<?= htmlspecialchars($row['user_id']) ?></span>
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="patient-age">
-                                        <div class="patient-detail">
-                                            <span class="age">39 years old</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-gender">
-                                        <span class="gender">Male</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="last-visit">
-                                        <span class="date">2024-03-10</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="next-appointment">
-                                        <span class="date">May 7, 2025</span>
-                                        <span class="time">10:30 AM</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="primay-diagnosis">
-                                        <span class="diagnosis">Hypertension</span>
-                                    </div>
-                                </td>
-                                <td><span class="status cancelled">Inactive</span></td>
+                                <td><span class="age"><?= $age ?></span></td>
+                                <td><span class="gender"><?= htmlspecialchars($row['gender'] ?? 'Not specified') ?></span></td>
+                                <td><span class="date"><?= $createdAt ?></span></td>
+                                <td><span class="status <?= $statusClass ?>"><?= $statusText ?></span></td>
                                 <td>
                                     <div class="action-icons">
                                         <div class="action-icon">
-                                            <i class="fas fa-eye"></i>
+                                            <i class="fas fa-eye view-btn"
+                                            data-full-name="<?= htmlspecialchars($row['full_name']) ?>"
+                                            data-email="<?= htmlspecialchars($row['email']) ?>"
+                                            data-phone="<?= htmlspecialchars($row['phone_number']) ?>"
+                                            data-dob="<?= htmlspecialchars($row['date_of_birth']) ?>"
+                                            data-gender="<?= htmlspecialchars($row['gender']) ?>"
+                                            data-address="<?= htmlspecialchars($row['address']) ?>"
+                                            data-city="<?= htmlspecialchars($row['city']) ?>"
+                                            data-state="<?= htmlspecialchars($row['state']) ?>"
+                                            data-zip="<?= htmlspecialchars($row['zip_code']) ?>"
+                                            data-created="<?= htmlspecialchars($row['created_at']) ?>"
+                                            data-image="<?= '../../images/patients/' . $row['profile_image'] ?>"
+                                            ></i>
                                         </div>
                                         <div class="action-icon">
-                                            <i class="fas fa-pen"></i>
+                                            <i class="fas fa-pen edit-btn"
+                                            data-user-id="<?= $row['user_id'] ?>"
+                                            data-full-name="<?= htmlspecialchars($row['full_name']) ?>"
+                                            data-email="<?= htmlspecialchars($row['email']) ?>"
+                                            data-phone="<?= htmlspecialchars($row['phone_number']) ?>"
+                                            data-dob="<?= htmlspecialchars($row['date_of_birth']) ?>"
+                                            data-gender="<?= htmlspecialchars($row['gender']) ?>"
+                                            data-address="<?= htmlspecialchars($row['address']) ?>"
+                                            data-city="<?= htmlspecialchars($row['city']) ?>"
+                                            data-state="<?= htmlspecialchars($row['state']) ?>"
+                                            data-zip="<?= htmlspecialchars($row['zip_code']) ?>">
+                                            </i>
                                         </div>
                                         <div class="action-icon">
-                                            <i class="fas fa-trash"></i>
+                                            <i class="fas fa-trash delete-btn" data-user-id="<?= $row['user_id'] ?>"></i>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-
-                            <!-- Patient 5 --> 
-                            <tr>
-                                <td>
-                                    <div class="patient-info">
-                                        <div class="patient-avatar">
-                                            <img src="images/logo.png" alt="">
-                                        </div>
-                                        <div class="patient-details">
-                                            <span class="patient-name">James Anderson</span>
-                                            <span class="patient-id">ID: P-10234</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-age">
-                                        <div class="patient-detail">
-                                            <span class="age">39 years old</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="patient-gender">
-                                        <span class="gender">Male</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="last-visit">
-                                        <span class="date">2024-03-10</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="next-appointment">
-                                        <span class="date">May 7, 2025</span>
-                                        <span class="time">10:30 AM</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="primay-diagnosis">
-                                        <span class="diagnosis">Hypertension</span>
-                                    </div>
-                                </td>
-                                <td><span class="status confirmed">Active</span></td>
-                                <td>
-                                    <div class="action-icons">
-                                        <div class="action-icon">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-pen"></i>
-                                        </div>
-                                        <div class="action-icon">
-                                            <i class="fas fa-trash"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-            
+                            <?php endwhile; ?>
                         </tbody>
+
                     </table>
+
+                    <!-- View Patient Modal -->
+                    <div id="viewPatientModal" class="modal" style="display: none;">
+                        <div class="modal-content styled-modal">
+                            <span class="close-view-btn">&times;</span>
+                            <h2 class="modal-title">Patient Details</h2>
+                            <div class="modal-body">
+                                <div class="modal-profile">
+                                    <img id="modal-profile-image" src="default.png" alt="Profile Image">
+                                </div>
+                                <div class="modal-info">
+                                    <p><strong>Full Name:</strong> <span id="modal-full-name"></span></p>
+                                    <p><strong>Email:</strong> <span id="modal-email"></span></p>
+                                    <p><strong>Phone:</strong> <span id="modal-phone"></span></p>
+                                    <p><strong>Date of Birth:</strong> <span id="modal-dob"></span></p>
+                                    <p><strong>Gender:</strong> <span id="modal-gender"></span></p>
+                                    <p><strong>Address:</strong> <span id="modal-address"></span></p>
+                                    <p><strong>City:</strong> <span id="modal-city"></span></p>
+                                    <p><strong>State:</strong> <span id="modal-state"></span></p>
+                                    <p><strong>Zip Code:</strong> <span id="modal-zip"></span></p>
+                                    <p><strong>Registered On:</strong> <span id="modal-created"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edit Patient Modal -->
+                    <div id="editPatientModal" class="modal" style="display: none;">
+                        <div class="modal-content styled-modal">
+                            <span class="close-edit-btn">&times;</span>
+                            <h2 class="modal-title">Edit Patient</h2>
+                            <form id="editPatientForm" method="POST" action="update_patient.php">
+                                <input type="hidden" name="user_id" id="edit-user-id">
+                                <label>Full Name:</label>
+                                <input type="text" name="full_name" id="edit-full-name" required>
+                                <label>Email:</label>
+                                <input type="email" name="email" id="edit-email" required>
+                                <label>Phone:</label>
+                                <input type="text" name="phone_number" id="edit-phone" required>
+                                <label>Date of Birth:</label>
+                                <input type="date" name="date_of_birth" id="edit-dob">
+                                <label>Gender:</label>
+                                <select name="gender" id="edit-gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <label>Address:</label>
+                                <input type="text" name="address" id="edit-address">
+                                <label>City:</label>
+                                <input type="text" name="city" id="edit-city">
+                                <label>State:</label>
+                                <input type="text" name="state" id="edit-state">
+                                <label>Zip Code:</label>
+                                <input type="text" name="zip_code" id="edit-zip">
+                                <button type="submit">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
 
                     <!-- Pagination -->
                     <div class="pagination">
                         <div class="pagination-info">
-                            Showing 1 to 5 of 24 entries
+                            Showing all the patient
                         </div>
                         <div class="pagination-controls">
                             <button class="page-btn prev-btn">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
                             <button class="page-btn active">1</button>
-                            <button class="page-btn">2</button>
-                            <button class="page-btn">3</button>
                             <button class="page-btn next-btn">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
@@ -1044,9 +1100,110 @@ $admin_id = $adminProfile['admin_id'];
                 document.querySelector('.main-content').classList.remove('expanded');
             }
         });
+    
+        //
 
+        document.querySelectorAll('.view-btn').forEach(icon => {
+            icon.addEventListener('click', function () {
+                document.getElementById('modal-full-name').textContent = this.dataset.fullName;
+                document.getElementById('modal-email').textContent = this.dataset.email;
+                document.getElementById('modal-phone').textContent = this.dataset.phone;
+                document.getElementById('modal-dob').textContent = this.dataset.dob;
+                document.getElementById('modal-gender').textContent = this.dataset.gender;
+                document.getElementById('modal-address').textContent = this.dataset.address;
+                document.getElementById('modal-city').textContent = this.dataset.city;
+                document.getElementById('modal-state').textContent = this.dataset.state;
+                document.getElementById('modal-zip').textContent = this.dataset.zip;
+                document.getElementById('modal-created').textContent = this.dataset.created;
+                document.getElementById('modal-profile-image').src = this.dataset.image;
+
+                document.getElementById('viewPatientModal').style.display = 'block';
+            });
+        });
+
+            // Close modal
+            document.querySelector('.close-view-btn').addEventListener('click', function () {
+                document.getElementById('viewPatientModal').style.display = 'none';
+            });
+
+            // Close if clicked outside the modal
+            window.addEventListener('click', function (event) {
+                const modal = document.getElementById('viewPatientModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        
+            document.querySelectorAll('.edit-btn').forEach(icon => {
+                icon.addEventListener('click', function () {
+                    document.getElementById('edit-user-id').value = this.dataset.userId;
+                    document.getElementById('edit-full-name').value = this.dataset.fullName;
+                    document.getElementById('edit-email').value = this.dataset.email;
+                    document.getElementById('edit-phone').value = this.dataset.phone;
+                    document.getElementById('edit-dob').value = this.dataset.dob;
+                    document.getElementById('edit-gender').value = this.dataset.gender;
+                    document.getElementById('edit-address').value = this.dataset.address;
+                    document.getElementById('edit-city').value = this.dataset.city;
+                    document.getElementById('edit-state').value = this.dataset.state;
+                    document.getElementById('edit-zip').value = this.dataset.zip;
+
+                    document.getElementById('editPatientModal').style.display = 'block';
+                });
+            });
+
+            // Close Edit Modal
+            document.querySelector('.close-edit-btn').addEventListener('click', function () {
+                document.getElementById('editPatientModal').style.display = 'none';
+            });
+
+            window.addEventListener('click', function (event) {
+                const modal = document.getElementById('editPatientModal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                // Delete patient event
+                document.querySelectorAll(".fa-trash").forEach(icon => {
+                    icon.addEventListener("click", function () {
+                        const row = this.closest("tr");
+                        const userId = row.querySelector(".patient-id").textContent.replace("ID: U-", "");
+
+                        if (confirm("Are you sure you want to delete this patient?")) {
+                            fetch("", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                body: `delete_user_id=${userId}`
+                            })
+                            .then(response => response.text())
+                            .then(data => {
+                                if (data.trim() === "success") {
+                                    row.remove(); // Remove row from table
+                                } else {
+                                    alert("Failed to delete patient.");
+                                    console.error(data);
+                                }
+                            });
+                        }
+                    });
+                });
+            });
 
     </script>
+
+    <?php if (isset($_GET['update']) && $_GET['update'] === 'success'): ?>
+    <script>
+        alert("Patient updated successfully!");
+        if (window.history.replaceState) {
+            const url = window.location.href.split('?')[0];
+            window.history.replaceState(null, null, url);
+        }
+    </script>
+    <?php endif; ?>
 </body>
 
 </html>
+

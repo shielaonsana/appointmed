@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 
 require_once '../../config/database.php';
@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['account_type'] !== 'Admin') {
 }
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -1057,6 +1056,7 @@ while ($row = $doctorResult->fetch_assoc()) {
                         </tbody>
                     </table>
 
+            
                     <!-- Pagination -->
                     <div class="pagination">
                         <div class="pagination-info">
@@ -1177,37 +1177,7 @@ while ($row = $doctorResult->fetch_assoc()) {
 
     //
 
-    document.querySelectorAll('.btn-toggle-status').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const row = btn.closest('tr');
-            const doctorId = row.dataset.doctorId;
-            fetch('doctor_actions.php', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: new URLSearchParams({action: 'toggle_status', doctor_id: doctorId})
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    const statusText = data.newIsActive == 1 ? 'Active' : 'Inactive';
-                    const statusSpan = row.querySelector('.status');
-
-                    // Update text
-                    statusSpan.textContent = statusText;
-
-                    // Remove old classes and add new one
-                    statusSpan.classList.remove('act', 'inactive');
-                    statusSpan.classList.add(statusText === 'Active' ? 'act' : 'inactive');
-
-                    // Optionally update row dataset status if you use it elsewhere
-                    row.dataset.status = statusText;
-                } else {
-                    alert(data.error || 'Failed to toggle status');
-                }
-            })
-        });
-    });
-
+    
     document.querySelectorAll('.btn-delete-doctor').forEach(btn => {
         btn.addEventListener('click', () => {
             if (!confirm('Are you sure you want to delete this doctor?')) return;
@@ -1295,11 +1265,6 @@ while ($row = $doctorResult->fetch_assoc()) {
             document.getElementById('doctor_id').value = '';
         });
     });
-
-
-
-
-
 
     </script>
 </body>

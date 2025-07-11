@@ -536,12 +536,12 @@ $result = $conn->query($query);
             display: inline-block;
         }
 
-        .confirmed {
+        .completed {
             background-color: #e6f7e9;
             color: #3dbb65;
         }
 
-        .pending {
+        .upcoming {
             background-color: #fff2e0;
             color: #f59e0b;
         }
@@ -806,7 +806,7 @@ $result = $conn->query($query);
                     <!-- Pagination -->
                     <div class="pagination">
                         <div class="pagination-info">
-                            Showing all the appointments
+                            Showing all the appointment
                         </div>
                         <div class="pagination-controls">
                             <button class="page-btn prev-btn">
