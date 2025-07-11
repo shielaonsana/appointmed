@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Appointment | AppointMed</title>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="my_logo">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="AppointMed Logo"></a>
+                <a href="index.html"><span>Appoint<span class="highlight">Med</span></span></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Booking Section -->
+    <div class="booking-container">
+        <a href="services.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to Services
+        </a>
+
+        <h1>Book Your Appointment</h1>
+        <p class="subtitle">Complete the steps below to schedule your appointment with our healthcare professionals.</p>
+
+        <div class="progress-steps">
+            <div class="step active" id="step-1-indicator">
+                <div class="step-number">1</div>
+                <div class="step-label">Specialty</div>
+            </div>
+            <div class="step" id="step-2-indicator">
+                <div class="step-number">2</div>
+                <div class="step-label">Doctor & Time</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-label">Appointment Details</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-label">Patient Info</div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-label">Confirm</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Specialty Selection -->
+        <div class="booking-step active" id="step-1">
+            <h2 class="section-title">Select a Medical Specialty</h2>
+
+            <input type="text" class="search-bar" id="specialty-search" placeholder="Search specialties...">
+
+            <div class="specialty-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="specialty-title">Cardiology</div>
+                    <div class="specialty-desc">Heart and cardiovascular system specialist</div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="specialty-title">Neurology</div>
+                    <div class="specialty-desc">Brain, spinal cord and nervous system care</div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <div class="specialty-title">Pediatrics</div>
+                    <div class="specialty-desc">Medical care for infants, children and adolescents</div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <div class="specialty-title">Dermatology</div>
+                    <div class="specialty-desc">Skin, hair and nail health specialists</div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="specialty-title">Laboratory Services</div>
+                    <div class="specialty-desc">Diagnostic tests and medical laboratory analysis</div>
+                </div>
+
+                <div class="specialty-card">
+                    <div class="specialty-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="specialty-title">Pharmacy</div>
+                    <div class="specialty-desc">Medication dispensing and pharmaceutical advice</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="continue-button" id="step1-continue">Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Doctor & Time Selection -->
+        <div class="booking-step" id="step-2">
+            <h2 class="section-title">Select a Doctor & Appointment Time</h2>
+
+            <div class="doctor-time-container">
+                <!-- Left Column: Doctor Selection -->
+                <div class="left-column">
+                    <div class="search-container">
+                        <input type="text" class="search-bar" id="doctor-search" placeholder="Search doctors...">
+                    </div>
+
+                    <div class="filter-pills">
+                        <div class="pill active">All</div>
+                        <div class="pill">Female</div>
+                        <div class="pill">Male</div>
+                        <div class="pill">Top Rated</div>
+                        <div class="pill">Available Today</div>
+                    </div>
+
+                    <div class="doctor-grid">
+                        <div class="doctor-card selected" data-id="1">
+                            <div class="doctor-info">
+                                <div class="doctor-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Dr. Sarah Johnson">
+                                </div>
+                                <div class="doctor-details">
+                                    <h3>Dr. Sarah Johnson</h3>
+                                    <div class="doctor-specialty">Cardiologist</div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8</span>
+                                    </div>
+                                    <div class="availability">
+                                        <i class="far fa-calendar-alt"></i>
+                                        Available: Mon, Wed, Fri
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-card" data-id="2">
+                            <div class="doctor-info">
+                                <div class="doctor-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Dr. Michael Chen">
+                                </div>
+                                <div class="doctor-details">
+                                    <h3>Dr. Michael Chen</h3>
+                                    <div class="doctor-specialty">Neurologist</div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>5.0</span>
+                                    </div>
+                                    <div class="availability">
+                                        <i class="far fa-calendar-alt"></i>
+                                        Available: Tue, Thu, Sat
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-card" data-id="3">
+                            <div class="doctor-info">
+                                <div class="doctor-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Dr. Emily Rodriguez">
+                                </div>
+                                <div class="doctor-details">
+                                    <h3>Dr. Emily Rodriguez</h3>
+                                    <div class="doctor-specialty">Pediatrician</div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>4.7</span>
+                                    </div>
+                                    <div class="availability">
+                                        <i class="far fa-calendar-alt"></i>
+                                        Available: Mon, Fri
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-card" data-id="4">
+                            <div class="doctor-info">
+                                <div class="doctor-avatar">
+                                    <img src="/api/placeholder/50/50" alt="Dr. James Wilson">
+                                </div>
+                                <div class="doctor-details">
+                                    <h3>Dr. James Wilson</h3>
+                                    <div class="doctor-specialty">Cardiologist</div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                    </div>
+                                    <div class="availability">
+                                        <i class="far fa-calendar-alt"></i>
+                                        Available: Mon, Wed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Calendar & Time Selection -->
+                <div class="right-column">
+                    <div class="select-date">Select Date</div>
+
+                    <div class="calendar-header">
+                        <button class="calendar-nav prev">‹</button>
+                        <div class="month-title">April 2025</div>
+                        <button class="calendar-nav next">›</button>
+                    </div>
+
+                    <table class="calendar">
+                        <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendar-body">
+                            <tr>
+                                <td>
+                                    <div class="day disabled">30</div>
+                                </td>
+                                <td>
+                                    <div class="day disabled">31</div>
+                                </td>
+                                <td>
+                                    <div class="day">1</div>
+                                </td>
+                                <td>
+                                    <div class="day">2</div>
+                                </td>
+                                <td>
+                                    <div class="day">3</div>
+                                </td>
+                                <td>
+                                    <div class="day">4</div>
+                                </td>
+                                <td>
+                                    <div class="day">5</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="day">6</div>
+                                </td>
+                                <td>
+                                    <div class="day">7</div>
+                                </td>
+                                <td>
+                                    <div class="day">8</div>
+                                </td>
+                                <td>
+                                    <div class="day">9</div>
+                                </td>
+                                <td>
+                                    <div class="day">10</div>
+                                </td>
+                                <td>
+                                    <div class="day">11</div>
+                                </td>
+                                <td>
+                                    <div class="day">12</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="day">13</div>
+                                </td>
+                                <td>
+                                    <div class="day">14</div>
+                                </td>
+                                <td>
+                                    <div class="day">15</div>
+                                </td>
+                                <td>
+                                    <div class="day">16</div>
+                                </td>
+                                <td>
+                                    <div class="day">17</div>
+                                </td>
+                                <td>
+                                    <div class="day">18</div>
+                                </td>
+                                <td>
+                                    <div class="day">19</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="day">20</div>
+                                </td>
+                                <td>
+                                    <div class="day">21</div>
+                                </td>
+                                <td>
+                                    <div class="day">22</div>
+                                </td>
+                                <td>
+                                    <div class="day selected">23</div>
+                                </td>
+                                <td>
+                                    <div class="day">24</div>
+                                </td>
+                                <td>
+                                    <div class="day">25</div>
+                                </td>
+                                <td>
+                                    <div class="day">26</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="day">27</div>
+                                </td>
+                                <td>
+                                    <div class="day">28</div>
+                                </td>
+                                <td>
+                                    <div class="day">29</div>
+                                </td>
+                                <td>
+                                    <div class="day">30</div>
+                                </td>
+                                <td>
+                                    <div class="day">1</div>
+                                </td>
+                                <td>
+                                    <div class="day">2</div>
+                                </td>
+                                <td>
+                                    <div class="day">3</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="available-time-title">Available Time Slots</div>
+                    <div class="available-time-date">Thursday, April 25, 2025</div>
+
+                    <div class="time-slots">
+                        <div class="time-slot selected">9:00 AM</div>
+                        <div class="time-slot">9:30 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot">10:30 AM</div>
+                        <div class="time-slot">11:00 AM</div>
+                        <div class="time-slot">11:30 AM</div>
+                        <div class="time-slot">1:00 PM</div>
+                        <div class="time-slot">1:30 PM</div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot">2:30 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot">3:30 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" id="step2-previous">Previous</button>
+                <button class="btn btn-primary" id="step2-continue">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+    <script src="script/booking.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppointMed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="my_logo">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="AppointMed Logo"></a>
+                <a href="index.html"><span>Appoint<span class="highlight">Med</span></span></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="login">Login</a>
+                    <a href="signup.html" class="signup">Signup</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Find and Book a Doctor<br>Easily</h1>
+            <p>Schedule appointments with top healthcare professionals.<br>
+                Quick, easy, and secure booking system designed with your convenience in mind.</p>
+            <a href="login.html" class="btn-book">Book Appointment</a>
+        </div>
+    </section>
+
+    <form class="scheduler" method="GET" action="doctors.html">
+        <h3>Quick Appointment Scheduler</h3>
+        <div class="form-row">
+            <select name="specialty" required>
+                <option value="">Select specialty</option>
+                <option>Cardiologist</option>
+                <option>Neurologist</option>
+                <option>Pediatrician</option>
+                <option>Dermatologist</option>
+                <option>Laboratory Services</option>
+                <option>Pharmacy</option>
+            </select>
+            <input type="date" name="date" required>
+        </div>
+        <button type="submit">Search Availability</button>
+    </form>
+
+
+
+    <!--Doctor Section-->
+    <section class="doctors-section" id="doctors">
+        <div class="doctors-header">
+            <h2>Our Specialist Doctors</h2>
+            <p>Meet our team of experienced healthcare professionals dedicated to providing you with
+                the best medical care.</p>
+        </div>
+
+        <div class="doctors-container">
+            <div class="doctors-cards">
+                <div class="doctor-card">
+                    <img src="images/doctor-1.png" alt="Dr. Sarah Johnson" loading="lazy">
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="specialty">Cardiologist</p>
+                        <div class="rating">
+                            ★★★★★ <span>(250 reviews)</span>
+                        </div>
+                        <p class="availability">🕒 Available: Mon, Wed, Fri</p>
+                        <a href="login.html" class="btn-appoint">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="images/doctor-2.png" alt="Dr. Michael Chen" loading="lazy">
+                    <div class="doctor-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="specialty">Neurologist</p>
+                        <div class="rating">
+                            ★★★★★ <span>(170 reviews)</span>
+                        </div>
+                        <p class="availability">🕒 Available: Tue, Thu, Sat</p>
+                        <a href="login.html" class="btn-appoint">Book Appointment</a>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="images/doctor-3.png" alt="Dr. Lisa Patel" loading="lazy">
+                    <div class="doctor-info">
+                        <h3>Dr. Lisa Patel</h3>
+                        <p class="specialty">Pediatrician</p>
+                        <div class="rating">
+                            ★★★★★ <span>(350 reviews)</span>
+                        </div>
+                        <p class="availability">🕒 Available: Sun, Tue, Thu</p>
+                        <a href="login.html" class="btn-appoint">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-all">
+            <a href="doctors.html" class="view-all-btn">View All Doctors</a>
+        </div>
+    </section>
+
+    <!--Medical Services Section-->
+    <section class="medical-services" id="services">
+        <div class="services-header">
+            <h2>Our Medical Services</h2>
+            <p>We offer a wide range of medical services to meet your healthcare needs with the highest standards of
+                quality and care.</p>
+        </div>
+
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Cardiology</h3>
+                <p>Comprehensive heart care services including diagnostics, treatment, and prevention of cardiovascular
+                    diseases.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Neurology</h3>
+                <p>Specialized care for disorders of the nervous system, including the brain, spinal cord, and
+                    peripheral nerves.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+                <h3>Pediatrics</h3>
+                <p>Specialized medical care for infants, children, and adolescents, focusing on growth, development, and
+                    health.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-allergies"></i>
+                </div>
+                <h3>Dermatology</h3>
+                <p>Expert care for conditions affecting the skin, hair, and nails, from common to complex dermatological
+                    issues.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Laboratory Services</h3>
+                <p>Comprehensive diagnostic testing and laboratory services with quick and accurate results for better
+                    healthcare.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <h3>Pharmacy</h3>
+                <p>On-site pharmacy services providing prescription medications, over-the-counter products, and
+                    medication counseling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimotinals-header">
+            <h2>What Our Patients Say</h2>
+            <p class="section-description">Hear from our satisfied patients about their experiences with our healthcare
+                services and
+                medical professionals.</p>
+        </div>
+
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"The appointment system was incredibly easy to use. I was able to book my appointment
+                    with Dr. Johnson in
+                    minutes, and the reminder notifications were very helpful."</p>
+                <div class="patient-info">
+                    <img src="images/testimonial-1.png" alt="Rebecca Thompson" class="patient-image">
+                    <div class="patient-details">
+                        <span class="patient-name">Rebecca Thompson</span>
+                        <span class="patient-type">Cardiology Patient</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Dr. Chen is an exceptional neurologist. He took the time to explain my condition
+                    thoroughly and created a
+                    treatment plan that has significantly improved my quality of life."</p>
+                <div class="patient-info">
+                    <img src="images/testimonial-2.png" alt="James Wilson" class="patient-image">
+                    <div class="patient-details">
+                        <span class="patient-name">James Wilson</span>
+                        <span class="patient-type">Neurology Patient</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"As a parent, I appreciate how Dr. Rodriguez makes my children feel comfortable during
+                    their visits. The online
+                    appointment system makes scheduling check-ups so convenient."</p>
+                <div class="patient-info">
+                    <img src="images/testimonial-3.png" alt="Olivia Martinez" class="patient-image">
+                    <div class="patient-details">
+                        <span class="patient-name">Olivia Martinez</span>
+                        <span class="patient-type">Parent of Pediatric Patients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section" id="contacts">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Ready to Schedule Your Appointment?</h2>
+                <p>Take the first step towards better health. Our online appointment system makes it easy to connect
+                    with the right healthcare professional for your needs.</p>
+                <div class="cta-buttons">
+                    <a href="login.html" class="btn-book-now">Book Now</a>
+                    <a href="contacts.html" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="cta-image">
+                <img src="images/clinic.png" alt="Modern Clinic Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="AppointMed Logo" class="footer-logo-img">
+                <p class="footer-tagline">Your trusted healthcare appointment system, connecting patients with the best
+                    medical professionals.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <h3>Services</h3>
+                <ul>
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Pediatrics</li>
+                    <li>Dermatology</li>
+                    <li>Laboratory Services</li>
+                    <li>Pharmacy</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare Ave, Medical Center</li>
+                    <li><i class="fas fa-phone"></i> +639 9876 5432</li>
+                    <li><i class="fas fa-envelope"></i>info@appointmed.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 AppointMed. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>

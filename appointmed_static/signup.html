@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | AppointMed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="my_logo">
+
+    <style>
+        /* Signup Form Styles */
+        .signup-container {
+            max-width: 450px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .signup-header h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .signup-header p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #3498db;
+        }
+
+        .form-group .input-wrapper {
+            position: relative;
+        }
+
+        .form-group .input-wrapper i {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .input-wrapper #toggle-password,
+        .input-wrapper #toggle-confirm-password {
+
+            margin-left: 340px;
+        }
+
+        .form-group .input-wrapper input {
+            padding-left: 40px;
+        }
+
+        .form-group .input-wrapper .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #999;
+            cursor: pointer;
+        }
+
+        .password-requirements {
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 3px;
+        }
+
+        .requirement i {
+            margin-right: 5px;
+            font-size: 10px;
+        }
+
+        .requirement.valid {
+            color: #2ecc71;
+        }
+
+        .requirement.invalid {
+            color: #e74c3c;
+        }
+
+        .account-type {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .account-type label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+        }
+
+        .account-type input {
+            margin-right: 10px;
+
+        }
+
+        .terms {
+
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .terms input {
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+
+        .terms a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Error styling */
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        input.error {
+            border-color: #e74c3c;
+        }
+
+        /* Media queries for responsive design */
+
+        /* For desktop and large tablets - 1024px and below */
+        @media screen and (max-width: 1024px) {
+            .signup-container {
+                max-width: 400px;
+                margin: 30px auto;
+            }
+
+            .input-wrapper #toggle-password,
+            .input-wrapper #toggle-confirm-password {
+                margin-left: 290px;
+            }
+        }
+
+        /* For tablets - 768px and below */
+        @media screen and (max-width: 768px) {
+            .signup-container {
+                max-width: 90%;
+                padding: 25px;
+                margin: 25px auto;
+            }
+
+            .signup-header h1 {
+                font-size: 22px;
+            }
+
+            .input-wrapper #toggle-password,
+            .input-wrapper #toggle-confirm-password {
+                margin-left: 590px;
+            }
+
+        }
+
+        /* For small tablets and large phones - 600px and below */
+        @media screen and (max-width: 600px) {
+            .signup-container {
+                max-width: 95%;
+                padding: 20px;
+                margin: 20px auto;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .signup-header {
+                margin-bottom: 20px;
+            }
+
+            .signup-header h1 {
+                font-size: 20px;
+            }
+
+            .signup-header p {
+                font-size: 13px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group input {
+                padding: 10px 15px;
+            }
+
+            .account-type {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* For small phones - 480px and below */
+        @media screen and (max-width: 480px) {
+
+            .signup-container {
+                max-width: 100%;
+                margin: 30px 30px;
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            .signup-header h1 {
+                font-size: 18px;
+            }
+
+            .signup-header p {
+                font-size: 12px;
+            }
+
+            .input-wrapper #toggle-password,
+            .input-wrapper #toggle-confirm-password {
+                margin-left: 290px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+            }
+
+            .form-group input {
+                font-size: 13px;
+                padding: 8px 15px;
+            }
+
+            .terms {
+                font-size: 12px;
+            }
+
+            .signup-btn {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .login-link {
+                font-size: 13px;
+            }
+
+            .password-requirements {
+                font-size: 11px;
+            }
+
+            .requirement {
+                font-size: 11px;
+            }
+
+            .form-group .account-type label {
+                margin-left: -290px;
+                padding: 0px 290px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="AppointMed Logo"></a>
+                <a href="index.html"><span>Appoint<span class="highlight">Med</span></span></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="login">Login</a>
+                    <a href="signup.html" class="signup">Signup</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="signup-container">
+            <div class="signup-header">
+                <h1>Create Your Account</h1>
+                <p>Join appointmed to easily book appointments with top doctors and access personalized medical
+                    services.</p>
+            </div>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                    </div>
+                    <div class="error-message" id="fullname-error">Please enter your full name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+                    </div>
+                    <div class="error-message" id="email-error">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Create a password">
+                        <i class="fas fa-eye toggle-password" id="toggle-password"></i>
+                    </div>
+                    <div class="error-message" id="password-error">Password does not meet requirements</div>
+                    <div class="password-requirements">
+                        <div class="requirement" id="length-req">
+                            <i class="fa-regular fa-circle"></i> At least 8 characters
+                        </div>
+                        <div class="requirement" id="uppercase-req">
+                            <i class="fa-regular fa-circle"></i> At least one uppercase letter
+                        </div>
+                        <div class="requirement" id="lowercase-req">
+                            <i class="fa-regular fa-circle"></i> At least one lowercase letter
+                        </div>
+                        <div class="requirement" id="number-req">
+                            <i class="fa-regular fa-circle"></i> At least one number
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirm-password" name="confirm-password"
+                            placeholder="Confirm your password">
+                        <i class="fas fa-eye toggle-password" id="toggle-confirm-password"></i>
+                    </div>
+                    <div class="error-message" id="confirm-password-error">Passwords do not match</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Account Type</label>
+                    <div class="account-type">
+                        <label>
+                            <input type="radio" name="account-type" value="patient" checked> Patient
+                        </label>
+                        <label>
+                            <input type="radio" name="account-type" value="doctor"> Doctor
+                        </label>
+                        <label>
+                            <input type="radio" name="account-type" value="admin"> Admin
+                        </label>
+                    </div>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                            Policy</a></label>
+                </div>
+                <div class="error-message" id="terms-error">You must agree to the terms and conditions</div>
+
+                <button type="submit" class="signup-btn">Create Account</button>
+            </form>
+            <div class="login-link">
+                Already have an account? <a href="login.html">Log in</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="AppointMed Logo" class="footer-logo-img">
+                <p class="footer-tagline">Your trusted healthcare appointment system, connecting patients with the best
+                    medical professionals.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <h3>Services</h3>
+                <ul>
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Pediatrics</li>
+                    <li>Dermatology</li>
+                    <li>Laboratory Services</li>
+                    <li>Pharmacy</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare Ave, Medical Center</li>
+                    <li><i class="fas fa-phone"></i> +639 9876 5432</li>
+                    <li><i class="fas fa-envelope"></i>info@appointmed.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 AppointMed. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navContainer = document.getElementById('nav-container');
+
+            if (menuToggle && navContainer) {
+                menuToggle.addEventListener('click', function () {
+                    navContainer.classList.toggle('active');
+                });
+
+                // Close menu when clicking on a nav link
+                const navLinks = document.querySelectorAll('.nav-links li a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        navContainer.classList.remove('active');
+                    });
+                });
+            }
+        });
+        // Toggle menu for mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navContainer = document.getElementById('nav-container');
+
+        menuToggle.addEventListener('click', () => {
+            navContainer.classList.toggle('active');
+        });
+
+        // Password toggle visibility
+        const togglePassword = document.getElementById('toggle-password');
+        const toggleConfirmPassword = document.getElementById('toggle-confirm-password');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        toggleConfirmPassword.addEventListener('click', function () {
+            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Password validation
+        const lengthReq = document.getElementById('length-req');
+        const uppercaseReq = document.getElementById('uppercase-req');
+        const lowercaseReq = document.getElementById('lowercase-req');
+        const numberReq = document.getElementById('number-req');
+
+        passwordInput.addEventListener('input', validatePassword);
+
+        function validatePassword() {
+            const password = passwordInput.value;
+
+            // Check length
+            if (password.length >= 8) {
+                lengthReq.classList.add('valid');
+                lengthReq.classList.remove('invalid');
+                lengthReq.querySelector('i').classList.remove('fa-circle');
+                lengthReq.querySelector('i').classList.add('fa-check-circle');
+            } else {
+                lengthReq.classList.remove('valid');
+                lengthReq.classList.add('invalid');
+                lengthReq.querySelector('i').classList.remove('fa-check-circle');
+                lengthReq.querySelector('i').classList.add('fa-circle');
+            }
+
+            // Check uppercase
+            if (/[A-Z]/.test(password)) {
+                uppercaseReq.classList.add('valid');
+                uppercaseReq.classList.remove('invalid');
+                uppercaseReq.querySelector('i').classList.remove('fa-circle');
+                uppercaseReq.querySelector('i').classList.add('fa-check-circle');
+            } else {
+                uppercaseReq.classList.remove('valid');
+                uppercaseReq.classList.add('invalid');
+                uppercaseReq.querySelector('i').classList.remove('fa-check-circle');
+                uppercaseReq.querySelector('i').classList.add('fa-circle');
+            }
+
+            // Check lowercase
+            if (/[a-z]/.test(password)) {
+                lowercaseReq.classList.add('valid');
+                lowercaseReq.classList.remove('invalid');
+                lowercaseReq.querySelector('i').classList.remove('fa-circle');
+                lowercaseReq.querySelector('i').classList.add('fa-check-circle');
+            } else {
+                lowercaseReq.classList.remove('valid');
+                lowercaseReq.classList.add('invalid');
+                lowercaseReq.querySelector('i').classList.remove('fa-check-circle');
+                lowercaseReq.querySelector('i').classList.add('fa-circle');
+            }
+
+            // Check number
+            if (/[0-9]/.test(password)) {
+                numberReq.classList.add('valid');
+                numberReq.classList.remove('invalid');
+                numberReq.querySelector('i').classList.remove('fa-circle');
+                numberReq.querySelector('i').classList.add('fa-check-circle');
+            } else {
+                numberReq.classList.remove('valid');
+                numberReq.classList.add('invalid');
+                numberReq.querySelector('i').classList.remove('fa-check-circle');
+                numberReq.querySelector('i').classList.add('fa-circle');
+            }
+        }
+
+        // Form validation
+        const signupForm = document.getElementById('signup-form');
+        const fullnameInput = document.getElementById('fullname');
+        const emailInput = document.getElementById('email');
+        const termsCheckbox = document.getElementById('terms');
+
+        signupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Validate fullname
+            if (fullnameInput.value.trim() === '') {
+                document.getElementById('fullname-error').style.display = 'block';
+                fullnameInput.classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('fullname-error').style.display = 'none';
+                fullnameInput.classList.remove('error');
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                document.getElementById('email-error').style.display = 'block';
+                emailInput.classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('email-error').style.display = 'none';
+                emailInput.classList.remove('error');
+            }
+
+            // Validate password
+            const password = passwordInput.value;
+            const isPasswordValid =
+                password.length >= 8 &&
+                /[A-Z]/.test(password) &&
+                /[a-z]/.test(password) &&
+                /[0-9]/.test(password);
+
+            if (!isPasswordValid) {
+                document.getElementById('password-error').style.display = 'block';
+                passwordInput.classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('password-error').style.display = 'none';
+                passwordInput.classList.remove('error');
+            }
+
+            // Validate confirm password
+            if (confirmPasswordInput.value !== passwordInput.value) {
+                document.getElementById('confirm-password-error').style.display = 'block';
+                confirmPasswordInput.classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('confirm-password-error').style.display = 'none';
+                confirmPasswordInput.classList.remove('error');
+            }
+
+            // Validate terms
+            if (!termsCheckbox.checked) {
+                document.getElementById('terms-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('terms-error').style.display = 'none';
+            }
+
+            if (isValid) {
+                alert('Account created successfully!');
+                signupForm.reset();
+                // In a real application, you would submit the form to the server here
+            }
+        });
+
+        // Clear errors on input
+        fullnameInput.addEventListener('input', function () {
+            document.getElementById('fullname-error').style.display = 'none';
+            fullnameInput.classList.remove('error');
+        });
+
+        emailInput.addEventListener('input', function () {
+            document.getElementById('email-error').style.display = 'none';
+            emailInput.classList.remove('error');
+        });
+
+        confirmPasswordInput.addEventListener('input', function () {
+            document.getElementById('confirm-password-error').style.display = 'none';
+            confirmPasswordInput.classList.remove('error');
+        });
+
+        termsCheckbox.addEventListener('change', function () {
+            document.getElementById('terms-error').style.display = 'none';
+        });
+
+    </script>
+</body>
+
+</html>

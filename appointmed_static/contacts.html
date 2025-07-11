@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | AppointMed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="my_logo">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="AppointMed Logo"></a>
+                <a href="index.html"><span>Appoint<span class="highlight">Med</span></span></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="login">Login</a>
+                    <a href="signup.html" class="signup">Signup</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-hero">
+        <div class="text-content">
+            <h1>Contact Us</h1>
+            <p>We're here to help with any questions about our healthcare services. Reach <br>
+                out to our team through any of the channels below.
+            </p>
+            <a href="#send-message" class="btn-book">Send a Message</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content" id="send-message">
+        <div class="container">
+            <div class="content-row">
+                <!-- Form Column -->
+                <div class="content-column">
+                    <div class="card">
+                        <h2 class="section-title" id="message-form">Send Us a Message</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="fullName" class="form-control" placeholder="Enter your name"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <select id="subject" class="form-control" required>
+                                    <option value="" selected disabled>Select a subject</option>
+                                    <option value="appointment">Appointment Inquiry</option>
+                                    <option value="billing">Billing Question</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message <span class="required">*</span></label>
+                                <textarea id="message" class="form-control" placeholder="How can we help you?"
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Submit Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div class="content-column">
+                    <div class="card-1">
+                        <h2 class="section-title">Contact Information</h2>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Support</h4>
+                                <p><a href="tel:+639 9876 5432">+639 9876 5432</a></p>
+                                <p>Monday-Friday: 8:00 AM - 7:00 PM</p>
+                                <p>Saturday: 10:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Support</h4>
+                                <p><a href="mailto:info@appointmed.com">info@appointmed.com</a></p>
+                                <p>We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Office Location</h4>
+                                <p>123 Healthcare Ave, Medical Center</p>
+                                <p>Monday-Friday: 8:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-2" style="margin-top: 20px;">
+                        <h2 class="section-title">Business Hours</h2>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Monday - Friday</td>
+                                <td>8:00 AM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>9:00 AM - 5:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>Closed</td>
+                            </tr>
+                            <tr>
+                                <td>Technical Support</td>
+                                <td>24/7</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="AppointMed Logo" class="footer-logo-img">
+                <p class="footer-tagline">Your trusted healthcare appointment system, connecting patients with the best
+                    medical professionals.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <h3>Services</h3>
+                <ul>
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Pediatrics</li>
+                    <li>Dermatology</li>
+                    <li>Laboratory Services</li>
+                    <li>Pharmacy</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare Ave, Medical Center</li>
+                    <li><i class="fas fa-phone"></i> +639 9876 5432</li>
+                    <li><i class="fas fa-envelope"></i>info@appointmed.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 AppointMed. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>

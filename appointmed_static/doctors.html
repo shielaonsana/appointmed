@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors | AppointMed</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="my_logo">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .testimonials-section {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="AppointMed Logo"></a>
+                <a href="index.html"><span>Appoint<span class="highlight">Med</span></span></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="login">Login</a>
+                    <a href="signup.html" class="signup">Signup</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="doctor-hero">
+        <div class="text-content">
+            <h1>Our Specialist Doctors</h1>
+            <p>Meet our team of experienced healthcare professionals dedicated to providing you <br> with the best
+                medical
+                care.</p>
+            <a href="login.html" class="btn-book">Book Appointment</a>
+        </div>
+    </section>
+
+    <section class="doctors-section">
+        <div class="page-container">
+            <!-- Sidebar Filters -->
+            <div class="sidebar">
+                <h3>Filter By</h3>
+
+                <div class="filter-group">
+                    <label for="specialtyFilter">Specialty</label>
+                    <select id="specialtyFilter">
+                        <option value="">All Specialties</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Neurologist">Neurologist</option>
+                        <option value="Pediatrician">Pediatrician</option>
+                        <option value="Dermatologist">Dermatologist</option>
+                        <option value="Laboratory Services">Laboratory Services</option>
+                        <option value="Pharmacy">Pharmacy</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="availabilityFilter">Availability</label>
+                    <select id="availabilityFilter">
+                        <option value="">All Days</option>
+                        <option value="Mon">Monday</option>
+                        <option value="Tue">Tuesday</option>
+                        <option value="Wed">Wednesday</option>
+                        <option value="Thu">Thursday</option>
+                        <option value="Fri">Friday</option>
+                        <option value="Sat">Saturday</option>
+                        <option value="Sun">Sunday</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="ratingFilter">Rating</label>
+                    <select id="ratingFilter">
+                        <option value="">All Ratings</option>
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★</option>
+                        <option value="3">★★★</option>
+                        <option value="2">★★</option>
+                        <option value="1">★</option>
+                    </select>
+                </div>
+
+                <div id="noDoctorsMessage" class="noDoctorsMessage">
+                    No available doctors.
+                </div>
+            </div>
+
+
+            <!-- Doctors List -->
+            <div class="doctors-content">
+                <div class="doctors-cardss">
+
+                    <div class="doctor-card" data-specialty="Cardiologist" data-availability="Mon,Wed,Fri"
+                        data-rating="5">
+                        <img src="images/doctor-1.png" alt="Dr. Sarah Johnson">
+                        <div class="doctor-info">
+                            <h3>Dr. Sarah Johnson</h3>
+                            <p class="specialty">Cardiologist</p>
+                            <div class="rating">★★★★★ <span>(250 reviews)</span></div>
+                            <p class="availability">🕒 Available: Mon, Wed, Fri</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Neurologist" data-availability="Tue,Thu,Sat"
+                        data-rating="5">
+                        <img src="images/doctor-2.png" alt="Dr. Michael Chen">
+                        <div class="doctor-info">
+                            <h3>Dr. Michael Chen</h3>
+                            <p class="specialty">Neurologist</p>
+                            <div class="rating">★★★★★ <span>(170 reviews)</span></div>
+                            <p class="availability">🕒 Available: Tue, Thu, Sat</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Pediatrician" data-availability="Sun,Tue,Thu"
+                        data-rating="5">
+                        <img src="images/doctor-3.png" alt="Dr. Anna Lopez">
+                        <div class="doctor-info">
+                            <h3>Dr. Anna Lopez</h3>
+                            <p class="specialty">Pediatrician</p>
+                            <div class="rating">★★★★★ <span>(350 reviews)</span></div>
+                            <p class="availability">🕒 Available: Sun, Tue, Thu</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Cardiologist" data-availability="Mon,Wed,Fri"
+                        data-rating="4.8">
+                        <img src="images/doctor-4.png" alt="Dr. Marcus Reyes">
+                        <div class="doctor-info">
+                            <h3>Dr. Marcus Reyes</h3>
+                            <p class="specialty">Cardiologist</p>
+                            <div class="rating">★★★★☆ <span>(198 reviews)</span></div>
+                            <p class="availability">🕒 Available: Mon, Wed, Fri</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Neurologist" data-availability="Tue,Thu,Sat"
+                        data-rating="4.6">
+                        <img src="images/doctor-5.png" alt="Dr. Angela Cruz">
+                        <div class="doctor-info">
+                            <h3>Dr. Angela Cruz</h3>
+                            <p class="specialty">Neurologist</p>
+                            <div class="rating">★★★★☆ <span>(174 reviews)</span></div>
+                            <p class="availability">🕒 Available: Tue, Thu, Sat</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Dermatologist" data-availability="Wed,Sat"
+                        data-rating="4.7">
+                        <img src="images/doctor-7.png" alt="Dr. Elaine Santos">
+                        <div class="doctor-info">
+                            <h3>Dr. Elaine Santos</h3>
+                            <p class="specialty">Dermatologist</p>
+                            <div class="rating">★★★★☆ <span>(160 reviews)</span></div>
+                            <p class="availability">🕒 Available: Wed, Sat</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Laboratory Services"
+                        data-availability="Mon,Tue,Wed,Thu,Fri" data-rating="4.5">
+                        <img src="images/doctor-8.png" alt="Dr. Patrick Dela Peña">
+                        <div class="doctor-info">
+                            <h3>Dr. Patrick Dela Peña</h3>
+                            <p class="specialty">Laboratory Services</p>
+                            <div class="rating">★★★★☆ <span>(140 reviews)</span></div>
+                            <p class="availability">🕒 Available: Mon, Tue, Wed, Thu, Fri</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Pharmacy" data-availability="Tue,Thu,Sun"
+                        data-rating="4.4">
+                        <img src="images/doctor-9.png" alt="Dr. Maricar Lim">
+                        <div class="doctor-info">
+                            <h3>Dr. Maricar Lim</h3>
+                            <p class="specialty">Pharmacy</p>
+                            <div class="rating">★★★★☆ <span>(130 reviews)</span></div>
+                            <p class="availability">🕒 Available: Tue, Thu, Sun</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Pediatrician" data-availability="Tue,Thu,Sat"
+                        data-rating="4.8">
+                        <img src="images/doctor-12.png" alt="Dr. Alex Gonzales">
+                        <div class="doctor-info">
+                            <h3>Dr. Alex Gonzales</h3>
+                            <p class="specialty">Pediatrician</p>
+                            <div class="rating">★★★★☆ <span>(210 reviews)</span></div>
+                            <p class="availability">🕒 Available: Tue, Thu, Sat</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Dermatologist" data-availability="Mon,Wed,Sun"
+                        data-rating="4.6">
+                        <img src="images/doctor-13.png" alt="Dr. Camille Navarro">
+                        <div class="doctor-info">
+                            <h3>Dr. Camille Navarro</h3>
+                            <p class="specialty">Dermatologist</p>
+                            <div class="rating">★★★★☆ <span>(150 reviews)</span></div>
+                            <p class="availability">🕒 Available: Mon, Wed, Sun</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Laboratory Services"
+                        data-availability="Mon,Tue,Wed,Thu,Sat" data-rating="4.9">
+                        <img src="images/doctor-14.png" alt="Dr. Stephen Ong">
+                        <div class="doctor-info">
+                            <h3>Dr. Stephen Ong</h3>
+                            <p class="specialty">Laboratory Services</p>
+                            <div class="rating">★★★★★ <span>(300 reviews)</span></div>
+                            <p class="availability">🕒 Available: Mon, Tue, Wed, Thu, Sat</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card" data-specialty="Pharmacy" data-availability="Wed,Fri,Sun"
+                        data-rating="4.5">
+                        <img src="images/doctor-15.png" alt="Dr. Erika Garcia">
+                        <div class="doctor-info">
+                            <h3>Dr. Erika Garcia</h3>
+                            <p class="specialty">Pharmacy</p>
+                            <div class="rating">★★★★☆ <span>(110 reviews)</span></div>
+                            <p class="availability">🕒 Available: Wed, Fri, Sun</p>
+                            <a href="book.html" class="btn-appoint">Book Appointment</a>
+                        </div>
+                    </div>
+                    <!-- add more doctor cards here -->
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="view-all" style="margin-top: 40px;">
+            <a href="index.html" class="view-all-btn">← Back to Home</a>
+        </div>
+
+
+
+    </section>
+
+    <!-- Patient Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimotinals-header">
+            <h2>What Our Patients Say</h2>
+            <p class="section-description">Hear from our satisfied patients about their experiences with our healthcare
+                services and
+                medical professionals.</p>
+        </div>
+
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"The appointment system was incredibly easy to use. I was able to book my appointment
+                    with Dr. Johnson in
+                    minutes, and the reminder notifications were very helpful."</p>
+                <div class="patient-info">
+                    <img src="images/testimonial-1.png" alt="Rebecca Thompson" class="patient-image">
+                    <div class="patient-details">
+                        <span class="patient-name">Rebecca Thompson</span>
+                        <span class="patient-type">Cardiology Patient</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Dr. Chen is an exceptional neurologist. He took the time to explain my condition
+                    thoroughly and created a
+                    treatment plan that has significantly improved my quality of life."</p>
+                <div class="patient-info">
+                    <img src="images/testimonial-2.png" alt="James Wilson" class="patient-image">
+                    <div class="patient-details">
+                        <span class="patient-name">James Wilson</span>
+                        <span class="patient-type">Neurology Patient</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"As a parent, I appreciate how Dr. Rodriguez makes my children feel comfortable during
+                    their visits. The online
+                    appointment system makes scheduling check-ups so convenient."</p>
+                <div class="patient-info">
+                    <img src="images/testimonial-3.png" alt="Olivia Martinez" class="patient-image">
+                    <div class="patient-details">
+                        <span class="patient-name">Olivia Martinez</span>
+                        <span class="patient-type">Parent of Pediatric Patients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="AppointMed Logo" class="footer-logo-img">
+                <p class="footer-tagline">Your trusted healthcare appointment system, connecting patients with the best
+                    medical professionals.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <h3>Services</h3>
+                <ul>
+                    <li>Cardiology</li>
+                    <li>Neurology</li>
+                    <li>Pediatrics</li>
+                    <li>Dermatology</li>
+                    <li>Laboratory Services</li>
+                    <li>Pharmacy</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare Ave, Medical Center</li>
+                    <li><i class="fas fa-phone"></i> +639 9876 5432</li>
+                    <li><i class="fas fa-envelope"></i>info@appointmed.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2025 AppointMed. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
